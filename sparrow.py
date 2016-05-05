@@ -23,6 +23,6 @@ twitter = Twython(API_KEY, API_SECRET,
                   ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 
 def send_tweet(tweet_text):
-    twitter.update_status(status = tweet_to_send)
+    twitter.update_status(status = tweet_text)
 
 send_tweet("This is my first tweet with Sparrow by @fmcorey - https://github.com/fmcorey/sparrow")
