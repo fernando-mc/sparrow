@@ -1,0 +1,10 @@
+{
+    "consumer_key": "THE_API_KEY_VALUE",
+    "consumer_secret": "THE_API_SECRET_VALUE",
+    "access_token_key": "TOKEN_KEY_VALUE",
+    "access_token_secret": "TOKEN_SECRET_VALUE"
+}
+
+//Please be careful with these values. 
+//Tip - Don't store this in your source.
+//You will need to get these values from Twitter
