@@ -18,6 +18,8 @@ def decrypt(ciphertext):
     return plaintext
 
 # Decrypts API keys and sets config values from the config file
+# Make sure this is loading KMS encrypted values in creds.json 
+# or else you may see a TypeError: Incorrect padding error
 CONSUMER_KEY = decrypt(credentials["consumer_key"])
 CONSUMER_SECRET = decrypt(credentials["consumer_secret"])
 ACCESS_TOKEN_KEY = decrypt(credentials["access_token_key"])
