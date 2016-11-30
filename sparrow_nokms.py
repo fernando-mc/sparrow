@@ -18,9 +18,9 @@ def send_tweet(tweet_text):
 with open('creds.json') as f:
     credentials = json.loads(f.read())
 
-CONSUMER_KEY = credentials["consumer_key"],
-CONSUMER_SECRET = credentials["consumer_secret"],
-ACCESS_TOKEN_KEY = credentials["access_token_key"],
+CONSUMER_KEY = credentials["consumer_key"]
+CONSUMER_SECRET = credentials["consumer_secret"]
+ACCESS_TOKEN_KEY = credentials["access_token_key"]
 ACCESS_TOKEN_SECRET = credentials["access_token_secret"]
 
 # Create the Twython Twitter client using our credentials

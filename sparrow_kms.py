@@ -43,9 +43,9 @@ def decrypt(ciphertext):
     plaintext = kms.decrypt(CiphertextBlob = base64.b64decode(ciphertext))['Plaintext']
     return plaintext
 
-CONSUMER_KEY = decrypt(credentials["consumer_key"]),
-CONSUMER_SECRET = decrypt(credentials["consumer_secret"]),
-ACCESS_TOKEN_KEY = decrypt(credentials["access_token_key"]),
+CONSUMER_KEY = decrypt(credentials["consumer_key"])
+CONSUMER_SECRET = decrypt(credentials["consumer_secret"])
+ACCESS_TOKEN_KEY = decrypt(credentials["access_token_key"])
 ACCESS_TOKEN_SECRET = decrypt(credentials["access_token_secret"])
 
 # Create the Twython Twitter client using our credentials
