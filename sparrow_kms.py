@@ -27,8 +27,7 @@ def encrypt(b_plaintext, key_id):
     return ciphertext
 
 def decrypt(ciphertext):
-    """Decrypt ciphertext with KMS"""
-    kms = boto3.client('kms')  
+    """Decrypt ciphertext with KMS""" 
     print 'Decrypting ciphertext with KMS'
     plaintext = kms.decrypt(CiphertextBlob = base64.b64decode(ciphertext))['Plaintext']
     return plaintext
