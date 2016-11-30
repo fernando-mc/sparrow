@@ -3,21 +3,12 @@ import random
 import json
 from twython import Twython
 
-# Sample random tweets
-potential_tweets = [
-    'This is my first tweet with Sparrow by @fmcorey - https://github.com/fmcorey/sparrow',
-    'Wow! Isn\'t Sparrow by @fmcorey just the coolest! https://github.com/fmcorey/sparrow',
-    'Jeez! Everyone should learn about AWS Lambda and Twitter Bots from @fmcorey'
-]
-
-def send_tweet(tweet_text):
-    """Sends a tweet to Twitter"""
-    twitter.update_status(status = tweet_text)
-
-# Loads in 'creds.json' vales as a dictionary
+# Credentials setup
+# Loads in 'creds.json' values as a dictionary
 with open('creds.json') as f:
     credentials = json.loads(f.read())
 
+# Sets config values from the config file
 CONSUMER_KEY = credentials["consumer_key"]
 CONSUMER_SECRET = credentials["consumer_secret"]
 ACCESS_TOKEN_KEY = credentials["access_token_key"]
@@ -30,6 +21,17 @@ twitter = Twython(
     ACCESS_TOKEN_KEY,
     ACCESS_TOKEN_SECRET
 )
+
+# Sample random tweets
+potential_tweets = [
+    'This is my first tweet with Sparrow by @fmcorey - https://github.com/fmcorey/sparrow',
+    'Wow! Isn\'t Sparrow by @fmcorey just the coolest! https://github.com/fmcorey/sparrow',
+    'Jeez! Everyone should learn about AWS Lambda and Twitter Bots from @fmcorey'
+]
+
+def send_tweet(tweet_text):
+    """Sends a tweet to Twitter"""
+    twitter.update_status(status = tweet_text)
 
 def handler(event,context):
     """Sends random tweet from list of potential tweets"""
