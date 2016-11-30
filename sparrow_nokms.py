@@ -7,7 +7,7 @@ from twython import Twython
 potential_tweets = [
     'This is my first tweet with Sparrow by @fmcorey - https://github.com/fmcorey/sparrow',
     'Wow! Isn\'t Sparrow by @fmcorey just the coolest! https://github.com/fmcorey/sparrow',
-    'Jeez! Everyone should learn about AWS Lambda and Twitter Bots from @fmcorey',
+    'Jeez! Everyone should learn about AWS Lambda and Twitter Bots from @fmcorey'
 ]
 
 def send_tweet(tweet_text):

@@ -9,7 +9,7 @@ from twython import Twython
 potential_tweets = [
     'This is my first tweet with Sparrow by @fmcorey - https://github.com/fmcorey/sparrow',
     'Wow! Isn\'t Sparrow by @fmcorey just the coolest! https://github.com/fmcorey/sparrow',
-    'Jeez! Everyone should learn about AWS Lambda and Twitter Bots from @fmcorey',
+    'Jeez! Everyone should learn about AWS Lambda and Twitter Bots from @fmcorey'
 ]
 
 def send_tweet(tweet_text):
@@ -25,7 +25,6 @@ kms = boto3.client('kms')
 
 # Use this function in the python shell to encrypt the
 # values you will store in the config file
-
 def encrypt(b_plaintext, key_id):
     """Encrypt plaintext with KMS key"""
     kms_result = kms.encrypt(
@@ -34,6 +33,7 @@ def encrypt(b_plaintext, key_id):
         Plaintext = plaintext
     )
     ciphertext = base64.b64encode(kms_result['CiphertextBlob'])
+    print ciphertext
     return ciphertext
 
 def decrypt(ciphertext):
