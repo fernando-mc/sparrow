@@ -39,12 +39,8 @@ ACCESS_TOKEN_KEY = decrypt(credentials["access_token_key"])
 ACCESS_TOKEN_SECRET = decrypt(credentials["access_token_secret"])
 
 # Create the Twython Twitter client using our credentials
-twitter = Twython(
-    CONSUMER_KEY, 
-    CONSUMER_SECRET,
-    ACCESS_TOKEN_KEY,
-    ACCESS_TOKEN_SECRET
-)
+twitter = Twython(CONSUMER_KEY, CONSUMER_SECRET,
+                  ACCESS_TOKEN_KEY, ACCESS_TOKEN_SECRET)
 
 # Sample random tweets
 potential_tweets = [
@@ -60,5 +56,4 @@ def send_tweet(tweet_text):
 def handler(event,context):
     """Sends random tweet from list of potential tweets"""
     send_tweet(random.choice(potential_tweets))
-
 
