@@ -10,24 +10,9 @@ from twython import Twython
 with open('creds.json') as f:
     credentials = json.loads(f.read())
 
-# Setup KMS client
-kms = boto3.client('kms')
-
-# Use this function in the python shell to encrypt the
-# values you will store in the config file
-def encrypt(b_plaintext, key_id):
-    """Encrypt plaintext with KMS key"""
-    kms_result = kms.encrypt(
-        # Sample key_id format: 'alias/MyAliasName'
-        KeyId = key_id, 
-        Plaintext = b_plaintext
-    )
-    ciphertext = base64.b64encode(kms_result['CiphertextBlob'])
-    print ciphertext
-    return ciphertext
-
 def decrypt(ciphertext):
     """Decrypt ciphertext with KMS""" 
+    kms = boto3.client('kms')
     print 'Decrypting ciphertext with KMS'
     plaintext = kms.decrypt(CiphertextBlob = base64.b64decode(ciphertext))['Plaintext']
     return plaintext
