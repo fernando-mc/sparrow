@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import boto3
-import random
 import base64
+import random
 import json
 from twython import Twython
 
@@ -20,11 +20,12 @@ def send_tweet(tweet_text):
 with open('creds.json') as f:
     credentials = json.loads(f.read())
 
-# KMS SPECIFIC CODE
+# Setup KMS client
 kms = boto3.client('kms')
 
 # Use this function in the python shell to encrypt the
 # values you will store in the config file
+
 def encrypt(b_plaintext, key_id):
     """Encrypt plaintext with KMS key"""
     kms_result = kms.encrypt(
