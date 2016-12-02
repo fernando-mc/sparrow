@@ -97,3 +97,12 @@ done before working with this repository.
     Default output format [None]: ENTER
 
     You should now be ready to go with the AWS CLI
+
+7. Twython
+    You should be able to install Twython with:
+
+    pip install twython
+
+    But if you have any issues you can check the 
+    documentation here: 
+    https://twython.readthedocs.io/en/latest/usage/install.html
