@@ -1,6 +1,8 @@
 # sparrow
 A lightweight shell for Twitter botmaking
 
+_This is for Python version 2_
+
 Remember:
 1. Don't put your API credentials in your source code
 2. API creds are sensitive info
